@@ -2,7 +2,6 @@
 $url='https://webservice.jogjakota.go.id/Monografi/linmas?kel=141002&thn=2019';
 $json = file_get_contents($url);
 $data = json_decode($json,true);
-
 $data = $data['data'];
 ?>
 
@@ -17,7 +16,7 @@ $data = $data['data'];
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="shortcut icon" href="pemkot.png"/>
-  <script type="text/javascript" src="Chart.js"></script>
+  <script type="text/javascript" src="assets/Chart.js"></script>
   <title>Lembaga</title>
 </head>
 <body>
@@ -31,7 +30,7 @@ $data = $data['data'];
           </a>    
         </div>
         <div class="col-9">
-          <p class="judul-navbar">Pemerintah Kota <br>Yogyakarta</p>
+          <p class="judul-navbar"> Kelurahan <br>Yogyakarta</p>
         </div>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +38,7 @@ $data = $data['data'];
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="gambaran_umum.php">Gambaran Umum<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="gambaranumum.php">Gambaran Umum<span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="masalah.php">Masalah dan Potensi SDM</a>
           <a class="nav-item nav-link active nav-aktif" href="lembaga.php">Lembaga</a>
           <li class="nav-item dropdown">
@@ -150,7 +149,7 @@ $data = $data['data'];
       </div> 
       <div class="row" style="margin-top: 20px;">
        <?php foreach ($data as $row) : ?>
-        <div class="col-sm ml-1 card  text-white bg-success">
+        <div class="col-sm ml-1 card border border-dark">
           <div class="card-body">
             <center>
               <h5>Semester : <?=$row['Semester'];?></h5>
@@ -163,49 +162,57 @@ $data = $data['data'];
         </div>
       <?php endforeach; ?>
     </div>
-    <div class="row mt-3">
-        <div class="col-sm ml-1 mb-3">
-            <div style="width: 300px;height: 300px">
-            <canvas id="myChart<?=$i;?>"></canvas>
-            </div>
 
-          <script>
-            var ctx = document.getElementById("myChart").getContext('2d');
-            var myChart = new Chart(ctx, {
-              type: 'pie',
-              data: {
-                labels: ["Semester 1", "Semester 2"],
-                datasets: [{
-                  label: 'Grafik Status Gizi Balita',
-                  data: [<?=$row['JumlahAnggotaLinmas'];?>, <?=$row['JumlahPosKamling'];?>, <?=$row['JumlahOperasiPenertiban'];?>, <?=$row['Pencurian']?>],
-                  backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 1)'
-                  ],
-                  borderColor: [
-                  'rgba(255,99,132,1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)'
-                  ],
-                  borderWidth: 2
+    <div class="row mt-3">
+      <div class="col-sm">
+        <center>
+          <h5>Grafik Per Semester <?=$row['Semester'];?></h5>
+          <h6>Tahun <?=$row['Tahun'];?></h6>
+          <div style="width: 500px;height: 300px">
+            <canvas id="myChart"></canvas>
+          </div>
+        </center>
+
+        <script>
+          var ctx = document.getElementById("myChart").getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: ["Anggota Linmas", "Pos Kamling", "Operasi Penertiban", "Pencurian"],
+              datasets: [{
+                label: <?php echo $row['Semester']?>,
+                data: [<?=$row['JumlahAnggotaLinmas'];?>, <?=$row['JumlahPosKamling'];?>, <?=$row['JumlahOperasiPenertiban'];?>, <?=$row['Pencurian'];?>],
+                backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 1)'
+                ],
+                borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 2
+              }]
+            },
+            options: {
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero:true
+                  }
                 }]
-              },
-              options: {
-                scales: {
-                  yAxes: [{
-                    ticks: {
-                      beginAtZero:true
-                    }
-                  }]
-                }
               }
-            });
-          </script>
-        </div>
+            }
+          });
+        </script>    
+      </div>
     </div>
+    
+
+
   </div>
 
   <div class="col">

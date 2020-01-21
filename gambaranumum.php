@@ -12,26 +12,6 @@
 	<title>Gambaran Umum</title>
 </head>
 <body>
-	<div class="tulisan-bergerak">
-		<script type="text/javascript">
-			function jam() {
-				var time = new Date(),
-				hours = time.getHours(),
-				minutes = time.getMinutes(),
-				seconds = time.getSeconds();
-				document.querySelectorAll('.jam')[0].innerHTML = harold(hours) + ":" + harold(minutes) + ":" + harold(seconds);
-
-				function harold(standIn) {
-					if (standIn < 10) {
-						standIn = '0' + standIn
-					}
-					return standIn;
-				}
-			}
-			setInterval(jam, 1000);
-		</script>
-	</div>
-
 	<nav class="navbar navbar-expand-lg navbar-light bg-light border border-dark">
 		<div class="container">
 
@@ -51,7 +31,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-item nav-link active nav-aktif" href="kp.php">Gambaran Umum<span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link active nav-aktif" href="gambaranumum.php">Gambaran Umum<span class="sr-only">(current)</span></a>
 					<a class="nav-item nav-link" href="masalah.php">Masalah dan Potensi SDM</a>
 					<a class="nav-item nav-link" href="lembaga.php">Lembaga</a>
 					<li class="nav-item dropdown">
@@ -72,17 +52,40 @@
 		</div>
 	</nav>
 	<div class="tulisan-bergerak">
+		<script type="text/javascript">
+			function jam() {
+				var time = new Date(),
+				hours = time.getHours(),
+				minutes = time.getMinutes(),
+				seconds = time.getSeconds();
+				document.querySelectorAll('.jam')[0].innerHTML = harold(hours) + ":" + harold(minutes) + ":" + harold(seconds);
+
+				function harold(standIn) {
+					if (standIn < 10) {
+						standIn = '0' + standIn
+					}
+					return standIn;
+				}
+			}
+			setInterval(jam, 1000);
+		</script>
 		<?php
 		$tanggal = mktime(date('m'), date("d"), date('Y'));
 		date_default_timezone_set("Asia/Jakarta");
+		function tglIndonesia($str){
+			$tr   = trim($str);
+			$str    = str_replace(array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'), array('Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum\'at', 'Sabtu', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'), $tr);
+			return $str;
+		}
 		?>
+
 		<div class="container">
 			<div class="row">
-				<div class="col-3">
-					<b> <?=date("d-m-Y", $tanggal )?> </b>/<b>  <span class="jam"></span></b>
+				<div class="col-4">
+					<b> <?php echo tglIndonesia(date('D, d F Y')); ?> </b>/<b>  <span class="jam">/</span> WIB</b>
 				</div>
 				<div class="col-8">
-					<marquee> Sawiji Ing Greget Raharjo Awit Karep : Satu Dalam Tekad dan Semangat, Sukses Sejahtera Karena Kemauan ♦ ♦ Jam Pelayanan Senin - Kamis Pukul 08:00 - 15:00 WIB , Jumat Pukul 08:00 - 11:30 WIB dan 13:00 - 14:00 WIB ♦</marquee>		
+					<marquee> Sawiji Ing Greget Raharjo Awit Karep : Satu Dalam Tekad dan Semangat, Sukses Sejahtera Karena Kemauan ♦ ♦ Jam Pelayanan Senin - Kamis Pukul 08:00 - 15:00 WIB , Jumat Pukul 08:00 - 11:30 WIB dan 13:00 - 14:00 WIB ♦</marquee>   
 				</div>
 			</div>
 		</div>
@@ -278,21 +281,21 @@
   						let jumlah_rt = 0;
 
 						// perulangan setiap banyaknya data
-  						for (let i = 0; i < data_rw.length; i++) 
-  						{
-  							jumlah_rw = i+1;
-  							jumlah_rt += data_rw[i].jml_rt;
-  						}
+						$.each(data_rw, function(i, hasildata)
+						{
+							jumlah_rw = i+1;
+							jumlah_rt += hasildata.jumlah_rt;
+						});
 
   						// sisipkan html di div dengan id=data_lpmk
   						$('#data_lpmk').html(`
   							<div class="col">
-	  							<h5>Lembaga Pemberdayaan Masyarakat Kelurahan (LPMK)</h5>
-	  							<h6 style="padding-left: 10px">Jumlah :</h6>
-	  							<br>
-	  							<h5>Jumlah RT : `+ jumlah_rt +`</h6> 
-	  							<br>
-	  							<h5>Jumlah RW : `+ jumlah_rw +`</h6>
+  							<h5>Lembaga Pemberdayaan Masyarakat Kelurahan (LPMK)</h5>
+  							<h6 style="padding-left: 10px">Jumlah :</h6>
+  							<br>
+  							<h5>Jumlah RT : `+ jumlah_rt +`</h6> 
+  							<br>
+  							<h5>Jumlah RW : `+ jumlah_rw +`</h6>
   							</div>
   							`);
   					});

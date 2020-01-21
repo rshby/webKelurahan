@@ -22,7 +22,7 @@
           </a>    
         </div>
         <div class="col-9">
-          <p class="judul-navbar">Pemerintah Kota <br>Yogyakarta</p>
+          <p class="judul-navbar"> Kelurahan <br>Yogyakarta</p>
         </div>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="gambaran_umum.php">Gambaran Umum<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="gambaranumum.php">Gambaran Umum<span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link active nav-aktif" href="masalah.php">Masalah dan Potensi SDM</a>
           <a class="nav-item nav-link" href="lembaga.php">Lembaga</a>
           <li class="nav-item dropdown">
@@ -45,7 +45,7 @@
               <a class="dropdown-item" href="kebersihan_sarpras.php">Kebersihan</a>
             </div>
           </li>
-          <a class="nav-item nav-link" href="tempat_strategis.php">Tempat Strategis / Lokasi Penting</a>
+          <a class="nav-item nav-link" href="tempat_strategis.php">Tempat Strategis</a>
         </div>
       </div>
     </div>
@@ -212,214 +212,266 @@
       </div> 
       <div class="row isi">
         <div class="col">
-          <center>
-            <a href="" class="btn btn-info" style="margin-top: 20px;">Jenis kelamin</a>
-            <a href="" class="btn btn-info" style="margin-top: 20px;">Pendidikan</a>
-            <a href="" class="btn btn-info" style="margin-top: 20px;">Pekerjaan</a>
-            <a href="" class="btn btn-info" style="margin-top: 20px;">Usia Kerja</a>
-          </center>
-          <div class="chart py-3">
-            <span class="text-center" id="loadMsg"><h4><i class="fa fa-circle-o-notch fa-spin"></i>&nbsp; Memuat, mohon tunggu ...</h4></span>
-            <canvas id="myChart" <?=$param['type'] == "horizontalBar" ? "" : "height='60vh' width='80vw'";?>></canvas>
+          <div class="justify-content-center text-center chart-menu mt-3">
+            <a href="#" class="btn btn-sm btn-info mr-1 mb-2">Jenis Kelamin</a>
+            <a href="#" class="btn btn-sm btn-info mr-1 mb-2">Kelompok Umur</a>
+            <a href="#" class="btn btn-sm btn-info mr-1 mb-2">Pendidikan</a>
+            <a href="#" class="btn btn-sm btn-info mr-1 mb-2">Pekerjaan</a>
+            <a href="#" class="btn btn-sm btn-info mr-1 mb-2">Tenaga Kerja</a>
           </div>
+        </div>
+      </div>
+      <br>
 
-          <div class="data-table mt-3">
-            <div class="py-4 text-center">
-              <h4>Data <?=$param['name']?></h4>
-            </div>
-            <table class="table bstable table-bordered" id="table-statistik-warga" data-url="<?=base_url('chart_data/getChartData/'.$param['url'].'/'.$loc);?>" data-pagination="false" data-locale="id-ID" data-sort-order="desc" data-row-style="rowStyle">
-              <thead>
-                <tr>
-                  <th data-field="<?=$param['url'];?>" data-sortable="true"><?= $param['name']?></th>
-                  <th data-field="jumlah" data-sortable="true" data-align="right">Jumlah</th>
-                </tr>
-              </thead>
-            </table>
-          </div>
+      <h5 class="text-center">Data Jenis Kelamin</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" style="text-align: center;">Jenis Kelamin</th>
+            <th scope="col" style="text-align: center;">Jumlah</th>
+          </tr>
+        </thead>
 
+        <tbody>
+          <tr>
+            <th scope="row">Laki-laki</th>
+          </tr>
+          <tr>
+            <th scope="row">Perempuan</th>
+          </tr>
+        </tbody>           
+      </table>
+
+      <h5 class="text-center">Data Kelompok Umur</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" style="text-align: center;">Kategori</th>
+            <th scope="col" style="text-align: center;">Laki-laki</th>
+            <th scope="col" style="text-align: center;">Perempuan</th>
+            <th scope="col" style="text-align: center;">Jumlah</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">0-4 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">5-9 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">10-14 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">15-19 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">20-24 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">25-29 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">30-34 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">35-39 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">40-44 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">45-49 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">50-54 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">55-59 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">60-64 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">65-69 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">70-74 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">75-79 Tahun</th>
+          </tr>
+          <tr>
+            <th scope="row">80 Tahun Keatas</th>
+          </tr>
+        </tbody>           
+      </table>
+
+      <h5 class="text-center">Data Pendidikan</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" style="text-align: center;">Pendidikan</th>
+            <th scope="col" style="text-align: center;">Jumlah</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">Tidak Sekolah</th>
+          </tr>
+          <tr>
+            <th scope="row">Belum Tamat SD/MI</th>
+          </tr>
+          <tr>
+            <th scope="row">Tamat SD/MI</th>
+          </tr>
+          <tr>
+            <th scope="row">SMP/MTs</th>
+          </tr>
+          <tr>
+            <th scope="row">SMA/SMK/MA</th>
+          </tr>
+          <tr>
+            <th scope="row">Diploma I/II</th>
+          </tr>
+          <tr>
+            <th scope="row">Akademi/Dplm III/S.Mud</th>
+          </tr>
+          <tr>
+            <th scope="row">Diploma IV/Strata I </th>
+          </tr>
+          <tr>
+            <th scope="row">Strata II</th>
+          </tr>
+          <tr>
+            <th scope="row">Strata III</th>
+          </tr>
+        </tbody>           
+      </table>
+
+      <h5 class="text-center">Data Pekerjaan</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" style="text-align: center;">Pekerjaan</th>
+            <th scope="col" style="text-align: center;">Jumlah</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">Mengurus Rumah Tangga</th>
+          </tr>
+          <tr>
+            <th scope="row">Pelajar/Mahasiswa</th>
+          </tr>
+          <tr>
+            <th scope="row">Pensiun</th>
+          </tr>
+          <tr>
+            <th scope="row">Belum Bekerja</th>
+          </tr>
+          <tr>
+            <th scope="row">Aparatur Sipil Negara</th>
+          </tr>
+          <tr>
+            <th scope="row">TNI</th>
+          </tr>
+          <tr>
+            <th scope="row">POLRI</th>
+          </tr>
+          <tr>
+            <th scope="row">Pejabat Negara</th>
+          </tr>
+          <tr>
+            <th scope="row">Buruh/Tukang Berkeahlian Khusus</th>
+          </tr>
+          <tr>
+            <th scope="row">Sektor Pertanian/Peternakan/Perikanan</th>
+          </tr>
+          <tr>
+            <th scope="row">Karyawan BUMN/BUMD</th>
+          </tr>
+          <tr>
+            <th scope="row">Karyawan Swasta</th>
+          </tr>
+          <tr>
+            <th scope="row">Wiraswasta</th>
+          </tr>
+          <tr>
+            <th scope="row">Tenaga Medis</th>
+          </tr>
+          <tr>
+            <th scope="row">Pekerjaan Lain</th>
+          </tr>
+        </tbody>           
+      </table>
+
+       <h5 class="text-center">Data Tenaga Kerja</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" style="text-align: center;">Usia</th>
+            <th scope="col" style="text-align: center;">Jumlah</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">0-14 Tahun (Belum Produktif)</th>
+          </tr>
+          <tr>
+            <th scope="row">15-64 Tahun (Produktif)</th>
+          </tr>
+          <tr>
+            <th scope="row">64 Tahun Keatas (Tidak Produktif)</th>
+          </tr>
+        </tbody>           
+      </table>
+
+    </div>
+
+    <div class="col">
+      <div class="bilah border border-dark rounded-lg">
+
+        <div class="menu-samping rounded-lg">
+          <h6 class="tulisan-samping">Recent Post</h6>
+        </div>
+        <div class="isi-samping border border-dark rounded-lg">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> 
         </div>
 
-        <?php 
-        $tipe = array(
-          "pie" => "type: '".$param['type']."',
-          options: {
-            responsive: true,
-            title: {
-              display: true,
-              fontSize: 18,
-              text: '".$param['name']."'
-              },
-              legend: {
-                display: true
-                },
-                showAllTooltips: true
-              },"
-              ,
-              "horizontalBar" => "type: '".$param['type']."',
-              options: {
-                title: {
-                  display: true,
-                  fontSize: 18,
-                  text: '".$param['name']."'
-                  },
-                  legend: {
-                    display: false
-                    },
-                    tooltips: {
-                      callbacks: {
-                        label: function(tooltipItem) {
-                          return tooltipItem.xLabel;
-                        }
-                      }
-                      },
-                      scales: {
-                        xAxes: [{
-                          ticks: {
-                            //suggestedMin: 0,
-                            //suggestedMax: 100,
-                            min: 0
-                          }
-                          }]
-                          },
+        <div class="menu-samping rounded-lg">
+          <h6 class="tulisan-samping">Jadwal Terdekat</h6>
+        </div>
+        <div class="isi-samping border border-dark rounded-lg">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> 
+        </div>
 
-                          showAllTooltips: true
-                        },"
-                        ,
-                        "bar" => "type: '".$param['type']."',
-                        options: {
-                          responsive: true,
-                          title: {
-                            display: true,
-                            fontSize: 18,
-                            text: '".$param['name']."'
-                            },
-                            legend: { display: false},
-                            showAllTooltips: true
-                          },"
-                          ,
-                        ); 
-
-        $tipe = $tipe[$param['type']];
-        ?>
-
-        <script>
-          $(document).ready(function() {
-            $(function() {
-              $("#table-statistik-warga").bootstrapTable();
-            });
-
-            $.ajax({
-              url: "<?= base_url('profil/statistik_sdm/getChartData/'.$param['url'].'/'.$loc);?>",
-              method: "GET",
-              timeout: 600000,
-              success: function(result) {
-                $("#loadMsg").html("");
-                var data = JSON.parse(result);
-                var <?= $param['url']?> = [];
-                var jumlah = [];
-                var warna = [];
-                var tepi = [];
-                var total = 0;
-
-                for(var i = 0; i < data.length; i++) {
-                  <?php echo $param['url']?>.push(data[i].<?php echo $param['url']?>);
-                  jumlah.push((data[i].jumlah == 0) ? 0 : data[i].jumlah );
-                  total += data[i].jumlah;
-                  warna.push(dynamicColors("0.5"));
-                  tepi.push(warna[i].replace("0.5", "1"));
-                }
-
-                if ("<?php echo $param['type'];?>" == "horizontalBar") {
-                  $("#myChart").attr("height", (data.length *15+40)+"px");
-                }
-
-                var chartdata = {
-                  labels: <?php echo $param['url']?>,
-                  datasets : [
-                  {
-                    label: '<?php echo $param['name']?>',
-                    fillColor: dynamicColors("0.5"),
-                    strokeColor: dynamicColors(),
-                    pointColor: dynamicColors(),
-                    backgroundColor: warna,
-                    borderColor: tepi,
-                    borderWidth: 1,
-                    data: jumlah
-                  }
-                  ]
-                };
-
-                var ctx = $("#myChart");
-                var barGraph = new Chart(ctx, {
-                  <?=$tipe;?>
-                  data: chartdata
-                });
-                // ctx.generateLegend();
-                setTimeout(function() {
-                  var count = '<tr><td class="text-right">JUMLAH</td><td class="text-right">'+ total +'</td></tr>';
-                  $('#table-statistik').find('tbody').append(count);
-                }, 1000);
-
-              },
-              error: function(data) {
-                $("#loadMsg").html("Gagal mengambil data. Coba muat ulang halaman dengan menekan F5.");
-              }
-            });
-
-
-            var dynamicColors = function(a="1") {
-              var r = Math.floor(Math.random() * 255);
-              var g = Math.floor(Math.random() * 255);
-              var b = Math.floor(Math.random() * 255);
-              return "rgba(" + r + "," + g + "," + b + "," + a + ")";
-            }
-
-          });
-        </script>
+        <div class="menu-samping rounded-lg">
+          <h6 class="tulisan-samping">Sosial Media</h6>
+        </div>
+        <div class="isi-samping border border-dark rounded-lg">
+          <center>
+            <a href="#"><img src="instagram.png" width="150px"></a>
+            <p>@xxxx</p>
+          </center> 
+        </div>         
       </div>
-    </div>   
-  </div>
-
-  <div class="col">
-    <div class="bilah border border-dark rounded-lg">
-
-      <div class="menu-samping rounded-lg">
-        <h6 class="tulisan-samping">Recent Post</h6>
-      </div>
-      <div class="isi-samping border border-dark rounded-lg">
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> 
-     </div>
-
-     <div class="menu-samping rounded-lg">
-      <h6 class="tulisan-samping">Jadwal Terdekat</h6>
     </div>
-    <div class="isi-samping border border-dark rounded-lg">
-     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> 
-   </div> 
-
-   <div class="menu-samping rounded-lg">
-    <h6 class="tulisan-samping">Sosial Media</h6>
   </div>
-  <div class="isi-samping border border-dark rounded-lg">
-    <center>
-      <a href="https://www.instagram.com/kominfodiy/"><img src="instagram.png" width="150px"></a>
-      <p>@xxxx</p>
-    </center> 
-  </div>        
-</div>
-</div>
-</div>
-
 </div>
 
 <!-- Footer -->
