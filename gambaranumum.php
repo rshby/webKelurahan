@@ -281,11 +281,11 @@
   						let jumlah_rt = 0;
 
 						// perulangan setiap banyaknya data
-						for (let i = 0; i < data_rw.length; i++) 
+						$.each(data_rw, function(i, hasildata)
 						{
 							jumlah_rw = i+1;
-							jumlah_rt += data_rw[i].jml_rt;
-						}
+							jumlah_rt += hasildata.jumlah_rt;
+						});
 
   						// sisipkan html di div dengan id=data_lpmk
   						$('#data_lpmk').html(`
