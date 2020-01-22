@@ -303,64 +303,8 @@
       </div>      
 
       <div class="row mt-3" id="data-pekerjaan">
-        <div class="col">
-          <h5 class="text-center">Data Pekerjaan</h5>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col" style="text-align: center;">Pekerjaan</th>
-                <th scope="col" style="text-align: center;">Jumlah</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Mengurus Rumah Tangga</th>
-              </tr>
-              <tr>
-                <th scope="row">Pelajar/Mahasiswa</th>
-              </tr>
-              <tr>
-                <th scope="row">Pensiun</th>
-              </tr>
-              <tr>
-                <th scope="row">Belum Bekerja</th>
-              </tr>
-              <tr>
-                <th scope="row">Aparatur Sipil Negara</th>
-              </tr>
-              <tr>
-                <th scope="row">TNI</th>
-              </tr>
-              <tr>
-                <th scope="row">POLRI</th>
-              </tr>
-              <tr>
-                <th scope="row">Pejabat Negara</th>
-              </tr>
-              <tr>
-                <th scope="row">Buruh/Tukang Berkeahlian Khusus</th>
-              </tr>
-              <tr>
-                <th scope="row">Sektor Pertanian/Peternakan/Perikanan</th>
-              </tr>
-              <tr>
-                <th scope="row">Karyawan BUMN/BUMD</th>
-              </tr>
-              <tr>
-                <th scope="row">Karyawan Swasta</th>
-              </tr>
-              <tr>
-                <th scope="row">Wiraswasta</th>
-              </tr>
-              <tr>
-                <th scope="row">Tenaga Medis</th>
-              </tr>
-              <tr>
-                <th scope="row">Pekerjaan Lain</th>
-              </tr>
-            </tbody>           
-          </table>
-        </div>
+        <!-- Data Pekerjaan ditampilkan lewat jQuery -->
+        
       </div>      
 
       <div class="row mt-3" id="data-tenaga-kerja">
@@ -469,6 +413,22 @@ crossorigin="anonymous"></script>
     let jml_s2 = 0;
     let jml_s3 = 0;
 
+    // Membuat variabel untuk menampung jumlah berdasarkan pekerjaan
+    let jml_mrumahtangga = 0;
+    let jml_pelajar = 0;
+    let jml_pensiun = 0;
+    let jml_belum_bekerja = 0;
+    let jml_tni = 0;
+    let jml_polri = 0;
+    let jml_pns = 0;
+    let jml_buruh = 0;
+    let jml_petani = 0;
+    let jml_bumn = 0;
+    let jml_swasta = 0;
+    let jml_wiraswasta = 0;
+    let jml_tenaga_medis = 0;
+    let jml_pekerjaan_lain = 0;
+
     var form = new FormData();
     form.append("no_prop", "34");
     form.append("no_kab", "71");
@@ -507,6 +467,21 @@ crossorigin="anonymous"></script>
       const s1 = this.filter(s => s.pendidikan === "DIPLOMA IV/STRATA I");
       const s2 = this.filter(s => s.pendidikan === "STRATA-II");
       const s3 = this.filter(s => s.pendidikan === "STRATA-III");
+
+      //Membuat filter data berdasarkan pekerjaan
+      const mengurus_rumah_tangga = this.filter(m => m.pekerjaan === "MENGURUS RUMAH TANGGA");
+      const pelajar = this.filter(p => p.pekerjaan === "PELAJAR/MAHASISWA");
+      const pensiun = this.filter(p => p.pekerjaan === "PENSIUNAN");
+      const belum_bekerja = this.filter(b => b.pekerjaan === "BELUM/TIDAK BEKERJA");
+      const tni = this.filter(t => t.pekerjaan === "TENTARA NASIONAL INDONESIA (TNI)");
+      const polri = this.filter(p => p.pekerjaan === "KEPOLISIAN RI (POLRI)");
+      const pns = this.filter(p => p.pekerjaan === "PEGAWAI NEGERI SIPIL (PNS)");
+      const buruh = this.filter(b => b.pekerjaan === "BURUH HARIAN LEPAS" && b.pekerjaan === "BURUH TANI/PERKEBUNAN");
+      const petani = this.filter(p => p.pekerjaan === "PETANI/PEKEBUN");
+      const bumn = this.filter(b => b.pekerjaan === "KARYAWAN BUMN" && b.pekerjaan === "KARYAWAN BUMD");
+      const swasta = this.filter(s => s.pekerjaan === "KARYAWAN SWASTA");
+      const wiraswasta = this.filter(w => w.pekerjaan === "WIRASWASTA");
+      const tenaga_medis = this.filter(t => t.pekerjaan === "DOKTER");
 
       // Perulangan untuk menghitung jumlah kepala keluarga
       $.each(kepala_keluarga, function(i, kpl)
@@ -584,6 +559,84 @@ crossorigin="anonymous"></script>
       $.each(s3, function(i, s)
         {
           jml_s3 = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah Mengurus rumah tangga
+      $.each(mengurus_rumah_tangga, function(i, m)
+        {
+          jml_mrumahtangga = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah pelajar
+      $.each(pelajar, function(i, p)
+        {
+          jml_pelajar = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah pensiun
+      $.each(pensiun, function(i, p)
+        {
+          jml_pensiun = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah belum Bekerja
+      $.each(belum_bekerja, function(i, b)
+        {
+          jml_belum_bekerja = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah TNI
+      $.each(tni, function(i, t)
+        {
+          jml_tni = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah POLRI
+      $.each(polri, function(i, p)
+        {
+          jml_polri = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah PNS
+      $.each(pns, function(i, p)
+        {
+          jml_pns = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah Buruh
+      $.each(buruh, function(i, b)
+        {
+          jml_buruh = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah Petani
+      $.each(petani, function(i, p)
+        {
+          jml_petani = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah Karyawan BUMN BUMD
+      $.each(bumn, function(i, b)
+        {
+          jml_bumn = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah karyawan Swasta
+      $.each(swasta, function(i, s)
+        {
+          jml_swasta = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah Wiraswasta
+      $.each(wiraswasta, function(i, w)
+        {
+          jml_wiraswasta = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah tenaga medis
+      $.each(tenaga_medis, function(i, t)
+        {
+          jml_tenaga_medis = i+1;
         });
 
       // Menghitung jumlah total berdasarkan jenis kelamin
@@ -676,6 +729,79 @@ crossorigin="anonymous"></script>
               <tr>
                 <th scope="row">Strata III</th>
                 <td class="text-right text-center" style="font-weight: bold;">`+ jml_s3 +`</td>
+              </tr>
+            </tbody>           
+          </table>
+        </div>
+        `);
+
+      // Tampilkan data Pekerjaan pada div id=data-pekerjaan
+      $('#data-pekerjaan').html(`
+        <div class="col">
+          <h5 class="text-center">Data Pekerjaan</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">Pekerjaan</th>
+                <th scope="col" style="text-align: center;">Jumlah</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Mengurus Rumah Tangga</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_mrumahtangga +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Pelajar/Mahasiswa</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_pelajar +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Pensiun</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_pensiun +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Belum Bekerja</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_belum_bekerja +`</td>
+              </tr>
+              <tr>
+                <th scope="row">TNI</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_tni +`</td>
+              </tr>
+              <tr>
+                <th scope="row">POLRI</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_polri +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Pegawai Negeri Sipil (PNS)</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_pns +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Buruh/Tukang Berkeahlian Khusus</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_buruh +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Sektor Pertanian/Peternakan/Perikanan</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_buruh +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Karyawan BUMN/BUMD</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_bumn +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Karyawan Swasta</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_swasta +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Wiraswasta</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_wiraswasta +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Tenaga Medis</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_tenaga_medis +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Pekerjaan Lain</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_tenaga_medis +`</td>
               </tr>
             </tbody>           
           </table>
