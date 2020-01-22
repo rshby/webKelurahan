@@ -248,7 +248,6 @@
 						<h3 class="text-center">`+ response.msg +`</h3>
 						`);
 				}
-
 			});
 		});
 	</script>
