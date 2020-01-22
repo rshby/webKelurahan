@@ -299,49 +299,7 @@
       </div>
 
       <div class="row mt-3" id="data-pendidikan">
-        <div class="col">
-          <h5 class="text-center">Data Pendidikan</h5>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col" style="text-align: center;">Pendidikan</th>
-                <th scope="col" style="text-align: center;">Jumlah</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Tidak Sekolah</th>
-              </tr>
-              <tr>
-                <th scope="row">Belum Tamat SD/MI</th>
-              </tr>
-              <tr>
-                <th scope="row">Tamat SD/MI</th>
-              </tr>
-              <tr>
-                <th scope="row">SMP/MTs</th>
-              </tr>
-              <tr>
-                <th scope="row">SMA/SMK/MA</th>
-              </tr>
-              <tr>
-                <th scope="row">Diploma I/II</th>
-              </tr>
-              <tr>
-                <th scope="row">Akademi/Dplm III/S.Mud</th>
-              </tr>
-              <tr>
-                <th scope="row">Diploma IV/Strata I </th>
-              </tr>
-              <tr>
-                <th scope="row">Strata II</th>
-              </tr>
-              <tr>
-                <th scope="row">Strata III</th>
-              </tr>
-            </tbody>           
-          </table>
-        </div>
+        <!-- Data pendidikan ditampilkan lewat jQuery -->
       </div>      
 
       <div class="row mt-3" id="data-pekerjaan">
@@ -499,6 +457,18 @@ crossorigin="anonymous"></script>
     let jml_kep_kel = 0;
     let total_jenis_kelamin = 0;
 
+    // Membuat variabel untuk menampung jumlah brdasarkan pendidikan
+    let jml_blm_sekolah = 0;
+    let jml_blm_tamat_sd = 0;
+    let jml_sd = 0;
+    let jml_smp = 0;
+    let jml_sma = 0;
+    let jml_diploma1 = 0;
+    let jml_akademi = 0;
+    let jml_s1 = 0;
+    let jml_s2 = 0;
+    let jml_s3 = 0;
+
     var form = new FormData();
     form.append("no_prop", "34");
     form.append("no_kab", "71");
@@ -526,6 +496,18 @@ crossorigin="anonymous"></script>
       const laki_laki = this.filter(l => l.jk === "LAKI-LAKI");
       const perempuan = this.filter(p => p.jk === "PEREMPUAN");
 
+      // Membuat filter data untuk pendidikan
+      const blm_sekolah = this.filter(b => b.pendidikan === "TIDAK/BLM SEKOLAH");
+      const blm_tamat_sd = this.filter(b => b.pendidikan === "BELUM TAMAT SD/SEDERAJAT");
+      const tamat_sd = this.filter(t => t.pendidikan === "TAMAT SD/SEDERAJAT");
+      const smp = this.filter(s => s.pendidikan === "SLTP/SEDERAJAT");
+      const sma = this.filter(s => s.pendidikan === "SLTA/SEDERAJAT");
+      const diploma1 = this.filter(d => d.pendidikan === "DIPLOMA I/II");
+      const akademi = this.filter(a => a.pendidikan === "AKADEMI/DIPLOMA III/SARJANA MUDA");
+      const s1 = this.filter(s => s.pendidikan === "DIPLOMA IV/STRATA I");
+      const s2 = this.filter(s => s.pendidikan === "STRATA-II");
+      const s3 = this.filter(s => s.pendidikan === "STRATA-III");
+
       // Perulangan untuk menghitung jumlah kepala keluarga
       $.each(kepala_keluarga, function(i, kpl)
       {
@@ -543,6 +525,66 @@ crossorigin="anonymous"></script>
       {
         jml_perem = i+1;
       });
+
+      // Perulangan untuk menghitung jumlah belum sekolah
+      $.each(blm_sekolah, function(i, b)
+      {
+        jml_blm_sekolah = i+1;
+      });
+
+      // Perulangan untuk menghitung jumlah belum tamat SD
+      $.each(blm_tamat_sd, function(i, b)
+      {
+        jml_blm_tamat_sd = i+1;
+      });
+
+      // Perulangan untuk menghitung jumlah tamat SD
+      $.each(tamat_sd, function(i, t)
+        {
+          jml_sd = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah SMP
+      $.each(smp, function(i, s)
+        {
+          jml_smp = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah SMA
+      $.each(sma, function(i, s)
+      {
+        jml_sma = i+1;
+      });
+
+      // Perulangan untuk menghitung jumlah Diploma 1
+      $.each(diploma1, function(i, d)
+      {
+        jml_diploma1 = i+1;
+      });
+
+      // Perulangan untuk menghitung jumlah akademi
+      $.each(akademi, function(i, a)
+      {
+        jml_akademi = i+1;
+      });
+
+      // Perulangan untuk menghitung jumlah S1
+      $.each(s1, function(i, s)
+        {
+          jml_s1 = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah S2
+      $.each(s2, function(i, s)
+        {
+          jml_s2 = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah S3
+      $.each(s3, function(i, s)
+        {
+          jml_s3 = i+1;
+        });
 
       // Menghitung jumlah total berdasarkan jenis kelamin
       total_jenis_kelamin = jml_laki + jml_perem;
@@ -580,6 +622,63 @@ crossorigin="anonymous"></script>
       $('#data-kepala-keluarga').html(`
         <div class="col">
           <h6>Jumlah Kepala Keluarga : `+ jml_kep_kel +`</h6>
+        </div>
+        `);
+
+      // Tampilkan data pendidikan pada div id=data-pendidikan
+      $('#data-pendidikan').html(`
+        <div class="col">
+          <h5 class="text-center">Data Pendidikan</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">Pendidikan</th>
+                <th scope="col" style="text-align: center;">Jumlah</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Tidak Sekolah</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_blm_sekolah +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Belum Tamat SD/MI</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_blm_tamat_sd +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Tamat SD/MI</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_sd +`</td>
+              </tr>
+              <tr>
+                <th scope="row">SMP/MTs</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_smp +`</td>
+              </tr>
+              <tr>
+                <th scope="row">SMA/SMK/MA</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_sma +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Diploma I/II</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_diploma1 +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Akademi/Dplm III/S.Mud</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_akademi +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Diploma IV/Strata I </th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_s1 +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Strata II</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_s2 +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Strata III</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_s3 +`</td>
+              </tr>
+            </tbody>           
+          </table>
         </div>
         `);
     });
