@@ -409,7 +409,7 @@
         </tbody>           
       </table>
 
-       <h5 class="text-center">Data Tenaga Kerja</h5>
+      <h5 class="text-center">Data Tenaga Kerja</h5>
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -487,5 +487,65 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    // Membuat variabel untuk menampung jumlah
+    let jml_laki = 0;
+    let jml_perem = 0;
+    let jml_kep_kel = 0;
+    let total_jenis_kelamin = 0;
+
+    var form = new FormData();
+    form.append("no_prop", "34");
+    form.append("no_kab", "71");
+    form.append("no_kec", "13");
+    form.append("no_kel", "1007");
+    form.append("no_rw", "013");
+
+    var settings = {
+      "url": "https://datawarehouse.jogjakota.go.id/index.php/capilrt?no_prop=34&no_kab=71&no_kec=13&no_kel=1007&no_rw=013",
+      "method": "POST",
+      "timeout": 0,
+      "headers": {
+        "Content-Type": "multipart/form-data; boundary=--------------------------880804722055367583969919"
+      },
+      "processData": false,
+      "mimeType": "multipart/form-data",
+      "contentType": false,
+      "data": form
+    };
+
+    $.ajax(settings).done(function (response)
+    {
+      // Membuat filter data berdasarkan kepala keluarga, laki laki, perempuan
+      const kepala_keluarga = this.filter(k => k.st_hbkel === "KEPALA KELUARGA");
+      const laki_laki = this.filter(l => l.jk === "LAKI-LAKI");
+      const perempuan = this.filter(p => p.jk === "PEREMPUAN");
+
+      // Perulangan untuk menghitung jumlah kepala keluarga
+      $.each(kepala_keluarga, function(i, kpl)
+      {
+        jml_kep_kel = i+1;
+      })
+
+      // Perulangan untuk menghitung jumlah laki-laki
+      $.each(laki_laki, function(i, lk)
+      {
+        jml_laki = i+1;
+      });
+
+      // Perulangan untuk menghitung jumlah perempuan
+      $.each(perempuan, function(i, pr)
+      {
+        jml_perem = i+1;
+      })
+
+      // Menghitung jumlah total berdasarkan jenis kelamin
+      total_jenis_kelamin = jml_laki + jml_perem;
+    });
+  });
+</script>
 </body>
 </html>
