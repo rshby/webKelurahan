@@ -15,11 +15,14 @@ $(document).ready(function(){
     "data": form
   };
 
-  $.ajax(settings).done(function (response) {
-    if(response.status == "true"){
-      let hasil = response.data[0];
+  $.ajax(settings).done(function (response)
+  {
+    if(response.status == "true")
+    {
+      let hasil = response.data;
 
-      $.each(hasil, function(i, data){
+      $.each(hasil, function(i, data)
+      {
         $('.isi-tempat').append(`
           <div class="col-4">
           Nama Tempat <br>
@@ -28,9 +31,9 @@ $(document).ready(function(){
           </div>
 
           <div class="col-8">
-          : `+ data.title +` <br>   
-          : `+ data.address +` <br>
-          : `+ data.no_telp +` 
+          : `+ this.title +` <br>   
+          : `+ this.address +` <br>
+          : `+ this.no_telp +` 
           </div>
           `); 
       });

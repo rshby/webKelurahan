@@ -19,24 +19,29 @@ $(document).ready(function(){
             data: {
                 's': $('#search-input').val()
             },
-            success: function(result){
-                if(result.Response == 'True'){
-                    let hiburan = result.Search;
-                    $.each(hiburan, function(i, data){
+            success: function(result)
+            {
+                if(result.status == "true")
+                {
+                    let hiburan = result.data;
+
+                    $.each(hiburan, function(i, data)
+                    {
                         $('#hiburan-list').append(`
-                            <div class="col-md-3">
-                            <div class="card">
-                            <div class="card-body">
-                            <h5 class="card-title">`+ data.title +`</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">`+ data.address +`</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">`+ data.no_telp +`</h6>
-                            </div>
-                            </div>
+                            <div class="col-sm-3 mb-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">`+ this.title +`</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">`+ this.address +`</h6>
+                                        <h6 class="card-subtitle mb-2 text-muted">`+ this.no_telp +`</h6>
+                                    </div>
+                                </div>
                             </div>
                             `);
                     });
                     $('#search-input').val('');
-                }else {
+                }else 
+                {
                     $('#hiburan-list').html('<h2 class="text-center">'+ result.Error +'</h2>');
                 }
             }
