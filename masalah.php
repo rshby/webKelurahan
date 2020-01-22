@@ -90,7 +90,6 @@
   </div>
 </div>
 <div class="container">
-
   <div class="row">
     <div class="col-9">
 
@@ -223,214 +222,233 @@
       </div>
       <br>
 
-      <h5 class="text-center">Data Jenis Kelamin</h5>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col" style="text-align: center;">Jenis Kelamin</th>
-            <th scope="col" style="text-align: center;">Jumlah</th>
-          </tr>
-        </thead>
+      <div class="row mt-3" id="data-jenis-kelamin">
+        <div class="col">
+          <h5 class="text-center">Data Jenis Kelamin</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">Jenis Kelamin</th>
+                <th scope="col" style="text-align: center;">Jumlah</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Laki-laki</th>
+                <td class="text-right"><h6>100</h6></td>
+              </tr>
+              <tr>
+                <th scope="row">Perempuan</th>
+              </tr>
+              <tr>
+                <th scope="row">Total</th>
+              </tr>
+            </tbody>           
+          </table>    
+        </div>
+      </div>
 
-        <tbody>
-          <tr>
-            <th scope="row">Laki-laki</th>
-          </tr>
-          <tr>
-            <th scope="row">Perempuan</th>
-          </tr>
-        </tbody>           
-      </table>
+      <div class="row mt-3" id="data-kelompok-umur">
+        <div class="col">
+          <h5 class="text-center">Data Kelompok Umur</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">Kategori</th>
+                <th scope="col" style="text-align: center;">Laki-laki</th>
+                <th scope="col" style="text-align: center;">Perempuan</th>
+                <th scope="col" style="text-align: center;">Jumlah</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">0-4 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">5-9 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">10-14 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">15-19 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">20-24 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">25-29 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">30-34 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">35-39 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">40-44 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">45-49 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">50-54 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">55-59 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">60-64 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">65-69 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">70-74 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">75-79 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">80 Tahun Keatas</th>
+              </tr>
+            </tbody>           
+          </table>
+        </div>
+      </div>
 
-      <h5 class="text-center">Data Kelompok Umur</h5>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col" style="text-align: center;">Kategori</th>
-            <th scope="col" style="text-align: center;">Laki-laki</th>
-            <th scope="col" style="text-align: center;">Perempuan</th>
-            <th scope="col" style="text-align: center;">Jumlah</th>
-          </tr>
-        </thead>
+      <div class="row mt-3" id="data-pendidikan">
+        <div class="col">
+          <h5 class="text-center">Data Pendidikan</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">Pendidikan</th>
+                <th scope="col" style="text-align: center;">Jumlah</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Tidak Sekolah</th>
+              </tr>
+              <tr>
+                <th scope="row">Belum Tamat SD/MI</th>
+              </tr>
+              <tr>
+                <th scope="row">Tamat SD/MI</th>
+              </tr>
+              <tr>
+                <th scope="row">SMP/MTs</th>
+              </tr>
+              <tr>
+                <th scope="row">SMA/SMK/MA</th>
+              </tr>
+              <tr>
+                <th scope="row">Diploma I/II</th>
+              </tr>
+              <tr>
+                <th scope="row">Akademi/Dplm III/S.Mud</th>
+              </tr>
+              <tr>
+                <th scope="row">Diploma IV/Strata I </th>
+              </tr>
+              <tr>
+                <th scope="row">Strata II</th>
+              </tr>
+              <tr>
+                <th scope="row">Strata III</th>
+              </tr>
+            </tbody>           
+          </table>
+        </div>
+      </div>      
 
-        <tbody>
-          <tr>
-            <th scope="row">0-4 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">5-9 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">10-14 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">15-19 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">20-24 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">25-29 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">30-34 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">35-39 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">40-44 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">45-49 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">50-54 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">55-59 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">60-64 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">65-69 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">70-74 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">75-79 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">80 Tahun Keatas</th>
-          </tr>
-        </tbody>           
-      </table>
+      <div class="row mt-3" id="data-pekerjaan">
+        <div class="col">
+          <h5 class="text-center">Data Pekerjaan</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">Pekerjaan</th>
+                <th scope="col" style="text-align: center;">Jumlah</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Mengurus Rumah Tangga</th>
+              </tr>
+              <tr>
+                <th scope="row">Pelajar/Mahasiswa</th>
+              </tr>
+              <tr>
+                <th scope="row">Pensiun</th>
+              </tr>
+              <tr>
+                <th scope="row">Belum Bekerja</th>
+              </tr>
+              <tr>
+                <th scope="row">Aparatur Sipil Negara</th>
+              </tr>
+              <tr>
+                <th scope="row">TNI</th>
+              </tr>
+              <tr>
+                <th scope="row">POLRI</th>
+              </tr>
+              <tr>
+                <th scope="row">Pejabat Negara</th>
+              </tr>
+              <tr>
+                <th scope="row">Buruh/Tukang Berkeahlian Khusus</th>
+              </tr>
+              <tr>
+                <th scope="row">Sektor Pertanian/Peternakan/Perikanan</th>
+              </tr>
+              <tr>
+                <th scope="row">Karyawan BUMN/BUMD</th>
+              </tr>
+              <tr>
+                <th scope="row">Karyawan Swasta</th>
+              </tr>
+              <tr>
+                <th scope="row">Wiraswasta</th>
+              </tr>
+              <tr>
+                <th scope="row">Tenaga Medis</th>
+              </tr>
+              <tr>
+                <th scope="row">Pekerjaan Lain</th>
+              </tr>
+            </tbody>           
+          </table>
+        </div>
+      </div>      
 
-      <h5 class="text-center">Data Pendidikan</h5>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col" style="text-align: center;">Pendidikan</th>
-            <th scope="col" style="text-align: center;">Jumlah</th>
-          </tr>
-        </thead>
+      <div class="row mt-3" id="data-tenaga-kerja">
+        <dic class="col">
+          <h5 class="text-center">Data Tenaga Kerja</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">Usia</th>
+                <th scope="col" style="text-align: center;">Jumlah</th>
+              </tr>
+            </thead>
 
-        <tbody>
-          <tr>
-            <th scope="row">Tidak Sekolah</th>
-          </tr>
-          <tr>
-            <th scope="row">Belum Tamat SD/MI</th>
-          </tr>
-          <tr>
-            <th scope="row">Tamat SD/MI</th>
-          </tr>
-          <tr>
-            <th scope="row">SMP/MTs</th>
-          </tr>
-          <tr>
-            <th scope="row">SMA/SMK/MA</th>
-          </tr>
-          <tr>
-            <th scope="row">Diploma I/II</th>
-          </tr>
-          <tr>
-            <th scope="row">Akademi/Dplm III/S.Mud</th>
-          </tr>
-          <tr>
-            <th scope="row">Diploma IV/Strata I </th>
-          </tr>
-          <tr>
-            <th scope="row">Strata II</th>
-          </tr>
-          <tr>
-            <th scope="row">Strata III</th>
-          </tr>
-        </tbody>           
-      </table>
-
-      <h5 class="text-center">Data Pekerjaan</h5>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col" style="text-align: center;">Pekerjaan</th>
-            <th scope="col" style="text-align: center;">Jumlah</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <th scope="row">Mengurus Rumah Tangga</th>
-          </tr>
-          <tr>
-            <th scope="row">Pelajar/Mahasiswa</th>
-          </tr>
-          <tr>
-            <th scope="row">Pensiun</th>
-          </tr>
-          <tr>
-            <th scope="row">Belum Bekerja</th>
-          </tr>
-          <tr>
-            <th scope="row">Aparatur Sipil Negara</th>
-          </tr>
-          <tr>
-            <th scope="row">TNI</th>
-          </tr>
-          <tr>
-            <th scope="row">POLRI</th>
-          </tr>
-          <tr>
-            <th scope="row">Pejabat Negara</th>
-          </tr>
-          <tr>
-            <th scope="row">Buruh/Tukang Berkeahlian Khusus</th>
-          </tr>
-          <tr>
-            <th scope="row">Sektor Pertanian/Peternakan/Perikanan</th>
-          </tr>
-          <tr>
-            <th scope="row">Karyawan BUMN/BUMD</th>
-          </tr>
-          <tr>
-            <th scope="row">Karyawan Swasta</th>
-          </tr>
-          <tr>
-            <th scope="row">Wiraswasta</th>
-          </tr>
-          <tr>
-            <th scope="row">Tenaga Medis</th>
-          </tr>
-          <tr>
-            <th scope="row">Pekerjaan Lain</th>
-          </tr>
-        </tbody>           
-      </table>
-
-      <h5 class="text-center">Data Tenaga Kerja</h5>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col" style="text-align: center;">Usia</th>
-            <th scope="col" style="text-align: center;">Jumlah</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <th scope="row">0-14 Tahun (Belum Produktif)</th>
-          </tr>
-          <tr>
-            <th scope="row">15-64 Tahun (Produktif)</th>
-          </tr>
-          <tr>
-            <th scope="row">64 Tahun Keatas (Tidak Produktif)</th>
-          </tr>
-        </tbody>           
-      </table>
-
+            <tbody>
+              <tr>
+                <th scope="row">0-14 Tahun (Belum Produktif)</th>
+              </tr>
+              <tr>
+                <th scope="row">15-64 Tahun (Produktif)</th>
+              </tr>
+              <tr>
+                <th scope="row">64 Tahun Keatas (Tidak Produktif)</th>
+              </tr>
+            </tbody>           
+          </table>
+        </dic>
+      </div>
     </div>
 
     <div class="col">
