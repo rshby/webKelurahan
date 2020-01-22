@@ -90,7 +90,6 @@
   </div>
 </div>
 <div class="container">
-
   <div class="row">
     <div class="col-9">
 
@@ -108,7 +107,6 @@
                 <th scope="col" style="text-align: center;">Jumlah</th>
               </tr>
             </thead>
-
             <tbody>
               <tr>
                 <th scope="row">Lansia (Jiwa)</th>
@@ -223,214 +221,173 @@
       </div>
       <br>
 
-      <h5 class="text-center">Data Jenis Kelamin</h5>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col" style="text-align: center;">Jenis Kelamin</th>
-            <th scope="col" style="text-align: center;">Jumlah</th>
-          </tr>
-        </thead>
+      <div class="row mt-3" id="data-jenis-kelamin">
+        <!-- Data ditampilkan lewat jquery -->
+      </div>
 
-        <tbody>
-          <tr>
-            <th scope="row">Laki-laki</th>
-          </tr>
-          <tr>
-            <th scope="row">Perempuan</th>
-          </tr>
-        </tbody>           
-      </table>
+      <div class="row" id="data-kepala-keluarga">
+        <!-- Data kepala keluraga ditampilkan lewat jquery -->
+      </div>
 
-      <h5 class="text-center">Data Kelompok Umur</h5>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col" style="text-align: center;">Kategori</th>
-            <th scope="col" style="text-align: center;">Laki-laki</th>
-            <th scope="col" style="text-align: center;">Perempuan</th>
-            <th scope="col" style="text-align: center;">Jumlah</th>
-          </tr>
-        </thead>
+      <div class="row mt-3" id="data-kelompok-umur">
+        <div class="col">
+          <h5 class="text-center">Data Kelompok Umur</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">Kategori</th>
+                <th scope="col" style="text-align: center;">Laki-laki</th>
+                <th scope="col" style="text-align: center;">Perempuan</th>
+                <th scope="col" style="text-align: center;">Jumlah</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">0-4 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">5-9 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">10-14 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">15-19 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">20-24 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">25-29 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">30-34 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">35-39 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">40-44 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">45-49 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">50-54 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">55-59 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">60-64 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">65-69 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">70-74 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">75-79 Tahun</th>
+              </tr>
+              <tr>
+                <th scope="row">80 Tahun Keatas</th>
+              </tr>
+            </tbody>           
+          </table>
+        </div>
+      </div>
 
-        <tbody>
-          <tr>
-            <th scope="row">0-4 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">5-9 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">10-14 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">15-19 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">20-24 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">25-29 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">30-34 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">35-39 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">40-44 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">45-49 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">50-54 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">55-59 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">60-64 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">65-69 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">70-74 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">75-79 Tahun</th>
-          </tr>
-          <tr>
-            <th scope="row">80 Tahun Keatas</th>
-          </tr>
-        </tbody>           
-      </table>
+      <div class="row mt-3" id="data-pendidikan">
+        <!-- Data pendidikan ditampilkan lewat jQuery -->
+      </div>      
 
-      <h5 class="text-center">Data Pendidikan</h5>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col" style="text-align: center;">Pendidikan</th>
-            <th scope="col" style="text-align: center;">Jumlah</th>
-          </tr>
-        </thead>
+      <div class="row mt-3" id="data-pekerjaan">
+        <div class="col">
+          <h5 class="text-center">Data Pekerjaan</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">Pekerjaan</th>
+                <th scope="col" style="text-align: center;">Jumlah</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Mengurus Rumah Tangga</th>
+              </tr>
+              <tr>
+                <th scope="row">Pelajar/Mahasiswa</th>
+              </tr>
+              <tr>
+                <th scope="row">Pensiun</th>
+              </tr>
+              <tr>
+                <th scope="row">Belum Bekerja</th>
+              </tr>
+              <tr>
+                <th scope="row">Aparatur Sipil Negara</th>
+              </tr>
+              <tr>
+                <th scope="row">TNI</th>
+              </tr>
+              <tr>
+                <th scope="row">POLRI</th>
+              </tr>
+              <tr>
+                <th scope="row">Pejabat Negara</th>
+              </tr>
+              <tr>
+                <th scope="row">Buruh/Tukang Berkeahlian Khusus</th>
+              </tr>
+              <tr>
+                <th scope="row">Sektor Pertanian/Peternakan/Perikanan</th>
+              </tr>
+              <tr>
+                <th scope="row">Karyawan BUMN/BUMD</th>
+              </tr>
+              <tr>
+                <th scope="row">Karyawan Swasta</th>
+              </tr>
+              <tr>
+                <th scope="row">Wiraswasta</th>
+              </tr>
+              <tr>
+                <th scope="row">Tenaga Medis</th>
+              </tr>
+              <tr>
+                <th scope="row">Pekerjaan Lain</th>
+              </tr>
+            </tbody>           
+          </table>
+        </div>
+      </div>      
 
-        <tbody>
-          <tr>
-            <th scope="row">Tidak Sekolah</th>
-          </tr>
-          <tr>
-            <th scope="row">Belum Tamat SD/MI</th>
-          </tr>
-          <tr>
-            <th scope="row">Tamat SD/MI</th>
-          </tr>
-          <tr>
-            <th scope="row">SMP/MTs</th>
-          </tr>
-          <tr>
-            <th scope="row">SMA/SMK/MA</th>
-          </tr>
-          <tr>
-            <th scope="row">Diploma I/II</th>
-          </tr>
-          <tr>
-            <th scope="row">Akademi/Dplm III/S.Mud</th>
-          </tr>
-          <tr>
-            <th scope="row">Diploma IV/Strata I </th>
-          </tr>
-          <tr>
-            <th scope="row">Strata II</th>
-          </tr>
-          <tr>
-            <th scope="row">Strata III</th>
-          </tr>
-        </tbody>           
-      </table>
+      <div class="row mt-3" id="data-tenaga-kerja">
+        <dic class="col">
+          <h5 class="text-center">Data Tenaga Kerja</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">Usia</th>
+                <th scope="col" style="text-align: center;">Jumlah</th>
+              </tr>
+            </thead>
 
-      <h5 class="text-center">Data Pekerjaan</h5>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col" style="text-align: center;">Pekerjaan</th>
-            <th scope="col" style="text-align: center;">Jumlah</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <th scope="row">Mengurus Rumah Tangga</th>
-          </tr>
-          <tr>
-            <th scope="row">Pelajar/Mahasiswa</th>
-          </tr>
-          <tr>
-            <th scope="row">Pensiun</th>
-          </tr>
-          <tr>
-            <th scope="row">Belum Bekerja</th>
-          </tr>
-          <tr>
-            <th scope="row">Aparatur Sipil Negara</th>
-          </tr>
-          <tr>
-            <th scope="row">TNI</th>
-          </tr>
-          <tr>
-            <th scope="row">POLRI</th>
-          </tr>
-          <tr>
-            <th scope="row">Pejabat Negara</th>
-          </tr>
-          <tr>
-            <th scope="row">Buruh/Tukang Berkeahlian Khusus</th>
-          </tr>
-          <tr>
-            <th scope="row">Sektor Pertanian/Peternakan/Perikanan</th>
-          </tr>
-          <tr>
-            <th scope="row">Karyawan BUMN/BUMD</th>
-          </tr>
-          <tr>
-            <th scope="row">Karyawan Swasta</th>
-          </tr>
-          <tr>
-            <th scope="row">Wiraswasta</th>
-          </tr>
-          <tr>
-            <th scope="row">Tenaga Medis</th>
-          </tr>
-          <tr>
-            <th scope="row">Pekerjaan Lain</th>
-          </tr>
-        </tbody>           
-      </table>
-
-       <h5 class="text-center">Data Tenaga Kerja</h5>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col" style="text-align: center;">Usia</th>
-            <th scope="col" style="text-align: center;">Jumlah</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <th scope="row">0-14 Tahun (Belum Produktif)</th>
-          </tr>
-          <tr>
-            <th scope="row">15-64 Tahun (Produktif)</th>
-          </tr>
-          <tr>
-            <th scope="row">64 Tahun Keatas (Tidak Produktif)</th>
-          </tr>
-        </tbody>           
-      </table>
-
+            <tbody>
+              <tr>
+                <th scope="row">0-14 Tahun (Belum Produktif)</th>
+              </tr>
+              <tr>
+                <th scope="row">15-64 Tahun (Produktif)</th>
+              </tr>
+              <tr>
+                <th scope="row">64 Tahun Keatas (Tidak Produktif)</th>
+              </tr>
+            </tbody>           
+          </table>
+        </dic>
+      </div>
     </div>
 
     <div class="col">
@@ -484,8 +441,248 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script
+src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    // Membuat variabel untuk menampung jumlah
+    let jml_laki = 0;
+    let jml_perem = 0;
+    let jml_kep_kel = 0;
+    let total_jenis_kelamin = 0;
+
+    // Membuat variabel untuk menampung jumlah brdasarkan pendidikan
+    let jml_blm_sekolah = 0;
+    let jml_blm_tamat_sd = 0;
+    let jml_sd = 0;
+    let jml_smp = 0;
+    let jml_sma = 0;
+    let jml_diploma1 = 0;
+    let jml_akademi = 0;
+    let jml_s1 = 0;
+    let jml_s2 = 0;
+    let jml_s3 = 0;
+
+    var form = new FormData();
+    form.append("no_prop", "34");
+    form.append("no_kab", "71");
+    form.append("no_kec", "13");
+    form.append("no_kel", "1007");
+    form.append("no_rw", "013");
+
+    var settings = {
+      "url": "https://datawarehouse.jogjakota.go.id/index.php/capilrt?no_prop=34&no_kab=71&no_kec=13&no_kel=1007&no_rw=013",
+      "method": "POST",
+      "timeout": 0,
+      "headers": {
+        "Content-Type": "multipart/form-data; boundary=--------------------------880804722055367583969919"
+      },
+      "processData": false,
+      "mimeType": "multipart/form-data",
+      "contentType": false,
+      "data": form
+    };
+
+    $.ajax(settings).done(function (response)
+    {
+      // Membuat filter data berdasarkan kepala keluarga, laki laki, perempuan
+      const kepala_keluarga = this.filter(k => k.st_hbkel === "KEPALA KELUARGA");
+      const laki_laki = this.filter(l => l.jk === "LAKI-LAKI");
+      const perempuan = this.filter(p => p.jk === "PEREMPUAN");
+
+      // Membuat filter data untuk pendidikan
+      const blm_sekolah = this.filter(b => b.pendidikan === "TIDAK/BLM SEKOLAH");
+      const blm_tamat_sd = this.filter(b => b.pendidikan === "BELUM TAMAT SD/SEDERAJAT");
+      const tamat_sd = this.filter(t => t.pendidikan === "TAMAT SD/SEDERAJAT");
+      const smp = this.filter(s => s.pendidikan === "SLTP/SEDERAJAT");
+      const sma = this.filter(s => s.pendidikan === "SLTA/SEDERAJAT");
+      const diploma1 = this.filter(d => d.pendidikan === "DIPLOMA I/II");
+      const akademi = this.filter(a => a.pendidikan === "AKADEMI/DIPLOMA III/SARJANA MUDA");
+      const s1 = this.filter(s => s.pendidikan === "DIPLOMA IV/STRATA I");
+      const s2 = this.filter(s => s.pendidikan === "STRATA-II");
+      const s3 = this.filter(s => s.pendidikan === "STRATA-III");
+
+      // Perulangan untuk menghitung jumlah kepala keluarga
+      $.each(kepala_keluarga, function(i, kpl)
+      {
+        jml_kep_kel = i+1;
+      });
+
+      // Perulangan untuk menghitung jumlah laki-laki
+      $.each(laki_laki, function(i, lk)
+      {
+        jml_laki = i+1;
+      });
+
+      // Perulangan untuk menghitung jumlah perempuan
+      $.each(perempuan, function(i, pr)
+      {
+        jml_perem = i+1;
+      });
+
+      // Perulangan untuk menghitung jumlah belum sekolah
+      $.each(blm_sekolah, function(i, b)
+      {
+        jml_blm_sekolah = i+1;
+      });
+
+      // Perulangan untuk menghitung jumlah belum tamat SD
+      $.each(blm_tamat_sd, function(i, b)
+      {
+        jml_blm_tamat_sd = i+1;
+      });
+
+      // Perulangan untuk menghitung jumlah tamat SD
+      $.each(tamat_sd, function(i, t)
+        {
+          jml_sd = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah SMP
+      $.each(smp, function(i, s)
+        {
+          jml_smp = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah SMA
+      $.each(sma, function(i, s)
+      {
+        jml_sma = i+1;
+      });
+
+      // Perulangan untuk menghitung jumlah Diploma 1
+      $.each(diploma1, function(i, d)
+      {
+        jml_diploma1 = i+1;
+      });
+
+      // Perulangan untuk menghitung jumlah akademi
+      $.each(akademi, function(i, a)
+      {
+        jml_akademi = i+1;
+      });
+
+      // Perulangan untuk menghitung jumlah S1
+      $.each(s1, function(i, s)
+        {
+          jml_s1 = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah S2
+      $.each(s2, function(i, s)
+        {
+          jml_s2 = i+1;
+        });
+
+      // Perulangan untuk menghitung jumlah S3
+      $.each(s3, function(i, s)
+        {
+          jml_s3 = i+1;
+        });
+
+      // Menghitung jumlah total berdasarkan jenis kelamin
+      total_jenis_kelamin = jml_laki + jml_perem;
+
+      // Tampilkan pada div dengan id=data-jenis-kelamin
+      $('$data-jenis-kelamin').html(`
+        <div class="col">
+          <h5 class="text-center">Data Jenis Kelamin</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">Jenis Kelamin</th>
+                <th scope="col" style="text-align: center;">Jumlah</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Laki-laki</th>
+                <td class="text-right"><h6>`+ jml_laki +`</h6></td>
+              </tr>
+              <tr>
+                <th scope="row">Perempuan</th>
+                <td class="text-right"><h6>`+ jml_perem +`</h6></td>
+              </tr>
+              <tr>
+                <th scope="row">Total</th>
+                <td class="text-right"><h6>`+ total_jenis_kelamin +`</h6></td>
+              </tr>
+            </tbody>           
+          </table>    
+        </div>
+        `);
+
+      // Tampilkan data kepala keluarga pada div id=data-kepala-keluarga
+      $('#data-kepala-keluarga').html(`
+        <div class="col">
+          <h6>Jumlah Kepala Keluarga : `+ jml_kep_kel +`</h6>
+        </div>
+        `);
+
+      // Tampilkan data pendidikan pada div id=data-pendidikan
+      $('#data-pendidikan').html(`
+        <div class="col">
+          <h5 class="text-center">Data Pendidikan</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">Pendidikan</th>
+                <th scope="col" style="text-align: center;">Jumlah</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Tidak Sekolah</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_blm_sekolah +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Belum Tamat SD/MI</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_blm_tamat_sd +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Tamat SD/MI</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_sd +`</td>
+              </tr>
+              <tr>
+                <th scope="row">SMP/MTs</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_smp +`</td>
+              </tr>
+              <tr>
+                <th scope="row">SMA/SMK/MA</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_sma +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Diploma I/II</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_diploma1 +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Akademi/Dplm III/S.Mud</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_akademi +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Diploma IV/Strata I </th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_s1 +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Strata II</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_s2 +`</td>
+              </tr>
+              <tr>
+                <th scope="row">Strata III</th>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_s3 +`</td>
+              </tr>
+            </tbody>           
+          </table>
+        </div>
+        `);
+    });
+  });
+</script>
 </body>
 </html>
