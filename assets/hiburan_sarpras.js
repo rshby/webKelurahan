@@ -24,8 +24,10 @@ $(document).ready(function(){
                 if(result.status == "true")
                 {
                     let hiburan = result.data;
+                    const data = hiburan.filter(h => h.title === 'Hotel');
+                    console.log(data);
 
-                    $.each(hiburan, function(i, data)
+                    $.each(data, function(i, n)
                     {
                         $('#hiburan-list').append(`
                             <div class="col-sm-3 mb-3">

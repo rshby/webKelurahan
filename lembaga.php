@@ -1,10 +1,3 @@
-<?php 
-$url='https://webservice.jogjakota.go.id/Monografi/linmas?kel=141002&thn=2019';
-$json = file_get_contents($url);
-$data = json_decode($json,true);
-$data = $data['data'];
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -147,67 +140,15 @@ $data = $data['data'];
       <div class="menu rounded-lg">
         <h4 class="tulisan-menu">Lembaga Keagamaan</h4>
       </div> 
-      <div class="row" style="margin-top: 20px;">
-       <?php foreach ($data as $row) : ?>
-        <div class="col-sm ml-1 card border border-dark">
-          <div class="card-body">
-            <center>
-              <h5>Semester : <?=$row['Semester'];?></h5>
-            </center>
-            <h6>Jumlah Anggota linmas : <?=$row['JumlahAnggotaLinmas'];?></h6>
-            <h6>Jumlah Pos Kamling : <?=$row['JumlahPosKamling'];?></h6>
-            <h6>Jumlah Operasi Penertiban : <?=$row['JumlahOperasiPenertiban'];?></h6>
-            <h6>Pencurian : <?=$row['Pencurian'];?></h6>
-          </div>
-        </div>
-      <?php endforeach; ?>
+      <div class="row isi-keagamaan" style="margin-top: 20px;">
+        <!-- Data Hansip ditampilkan lewat jQuery -->
     </div>
 
     <div class="row mt-3">
       <div class="col-sm">
-        <center>
-          <h5>Grafik Per Semester <?=$row['Semester'];?></h5>
-          <h6>Tahun <?=$row['Tahun'];?></h6>
-          <div style="width: 500px;height: 300px">
-            <canvas id="myChart"></canvas>
-          </div>
-        </center>
-
-        <script>
-          var ctx = document.getElementById("myChart").getContext('2d');
-          var myChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-              labels: ["Anggota Linmas", "Pos Kamling", "Operasi Penertiban", "Pencurian"],
-              datasets: [{
-                label: <?php echo $row['Semester']?>,
-                data: [<?=$row['JumlahAnggotaLinmas'];?>, <?=$row['JumlahPosKamling'];?>, <?=$row['JumlahOperasiPenertiban'];?>, <?=$row['Pencurian'];?>],
-                backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 1)'
-                ],
-                borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)'
-                ],
-                borderWidth: 2
-              }]
-            },
-            options: {
-              scales: {
-                yAxes: [{
-                  ticks: {
-                    beginAtZero:true
-                  }
-                }]
-              }
-            }
-          });
-        </script>    
+        <div class="row grafik-keagamaan">
+        <!-- Grafik ditampilkan lewat jQuery -->
+        </div>
       </div>
     </div>
     
@@ -266,9 +207,91 @@ $data = $data['data'];
 </div>
 
 <!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<!-- Script untuk data lembaga keagamaan -->
+  <script type="text/javascript">
+  var settings = {
+    "url": "https://webservice.jogjakota.go.id/Monografi/linmas?kel=141002&thn=2019",
+    "method": "GET",
+    "timeout": 0,
+  };
+
+  $.ajax(settings).done(function (response) 
+  {
+    const result = this.data;
+    $.each(result, function(i, hasil)
+      {
+        $('.isi-keagamaan').append(`
+          <div class="col-sm-6 ml-1 card border border-dark">
+          <div class="card-body">
+            <center>
+              <h5>Semester : `+ this.Semester +`</h5>
+            </center>
+            <h6>Jumlah Anggota linmas : `+ this.JumlahAnggotaLinmas +`</h6>
+            <h6>Jumlah Pos Kamling : `+ this.JumlahPosKamling +`</h6>
+            <h6>Jumlah Operasi Penertiban : `+ this.JumlahOperasiPenertiban +`</h6>
+            <h6>Pencurian : `+ this.Pencurian +`</h6>
+          </div>
+        </div>
+          `);
+      });
+    
+    $('.grafik-keagamaan').html(`
+        <center>
+          <h5>Grafik Per Semester `+ this.Semester +`</h5>
+          <h6>Tahun `+ this.Tahun +`</h6>
+          <div style="width: 500px;height: 300px">
+            <canvas id="myChart"></canvas>
+          </div>
+        </center>
+
+        <script>
+          var ctx = document.getElementById("myChart").getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: ["Anggota Linmas", "Pos Kamling", "Operasi Penertiban", "Pencurian"],
+              datasets: [{
+                label: `+ this.Semester +`,
+                data: [`+ this.JumlahAnggotaLinmas +`, `+ this.JumlahPosKamling +`, `+ this.JumlahOperasiPenertiban +`, `+ this.Pencurian +`],
+                backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 1)'
+                ],
+                borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 2
+              }]
+            },
+            options: {
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero:true
+                  }
+                }]
+              }
+            }
+          });
+        <script>      
+      `);
+  });
+
+  </script>
+
 </body>
 </html>
