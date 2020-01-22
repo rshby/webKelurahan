@@ -220,14 +220,14 @@
 
 						$('.isi-profil').append(`
 							<div class="col-4">
-							Nama <br>
-							NIP <br>
-							Tempat Lahir <br>
-							Tanggal Lahir <br>
-							Agama <br>
-							Pendidikan Terakhir <br>
-							Alamat Rumah <br>
-							Telepon
+								Nama <br>
+								NIP <br>
+								Tempat Lahir <br>
+								Tanggal Lahir <br>
+								Agama <br>
+								Pendidikan Terakhir <br>
+								Alamat Rumah <br>
+								Telepon
 							</div>
 
 							<div class="col-8">
