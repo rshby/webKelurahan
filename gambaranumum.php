@@ -116,7 +116,7 @@
 				</div> 
 				<br>
 				<div class="row isi" id="data_lpmk">
-					
+				<!-- Data ditampilkan lewat Jquery -->					
 				</div>
 
 				<!-- Menu Tematik dan Potensi Wilayah -->
@@ -206,14 +206,16 @@
 				"data": form
 			};
 
-			$.ajax(settings).done(function (response) {
+			$.ajax(settings).done(function (response)
+			{
 				if(response.status == "true")
 				{
 					let hasil = response.data;
 
-					$.each(hasil, function(i, data){
+					$.each(hasil, function(i, data)
+					{
 						$('#foto-lurah').append(`
-							<img src="`+ data.foto +`" class="gambar" style="width: 200px;">
+							<img src="`+ this.foto +`" class="gambar" style="width: 200px;">
 							`);
 
 						$('.isi-profil').append(`
@@ -229,14 +231,14 @@
 							</div>
 
 							<div class="col-8">
-							: `+ data.nama +` <br>   
-							: `+ data.nip +` <br>
-							: `+ data.tempat_lahir +` <br>
-							: `+ data.tanggal_lahir +`<br>
-							: `+ data.agama +` <br>
-							: `+ data.pendidikan +` <br>
-							: `+ data.alamat +` <br>
-							: `+ data.hp +`
+							: `+ this.nama +` <br>   
+							: `+ this.nip +` <br>
+							: `+ this.tempat_lahir +` <br>
+							: `+ this.tanggal_lahir +`<br>
+							: `+ this.agama +` <br>
+							: `+ this.pendidikan +` <br>
+							: `+ this.alamat +` <br>
+							: `+ this.hp +`
 							</div>
 							`);	
 					});
@@ -254,52 +256,52 @@
 	<!-- Script untuk lpmk -->
 	<script type="text/javascript">
 		$(document).ready(function(){
-  					// Ambil data json
-  					let form = new FormData();
-  					form.append("no_prop", "34");
-  					form.append("no_kab", "71");
-  					form.append("no_kec", "2");
-  					form.append("no_kel", "1003");
+			// buat variabel untuk menamping nilai jumlah
+			let jumlah_rw = 0;
+			let jumlah_rt = 0;
 
-  					let settings = {
-  						"url": "https://datawarehouse.jogjakota.go.id/index.php/capillistrw/",
-  						"method": "POST",
-  						"timeout": 0,
-  						"headers": {
-  							"Content-Type": "multipart/form-data; boundary=--------------------------185297033549165871591147"
-  						},
-  						"processData": false,
-  						"mimeType": "multipart/form-data",
-  						"contentType": false,
-  						"data": form
-  					};
+  			// Ambil data json
+  			let form = new FormData();
+  			form.append("no_prop", "34");
+  			form.append("no_kab", "71");
+  			form.append("no_kec", "2");
+  			form.append("no_kel", "1003");
 
-  					$.ajax(settings).done(function (data_rw) 
-  					{
-  						// buat variabel untuk menamping nilai jumlah
-  						let jumlah_rw = 0;
-  						let jumlah_rt = 0;
+  			let settings = {
+  				"url": "https://datawarehouse.jogjakota.go.id/index.php/capillistrw/",
+  				"method": "POST",
+  				"timeout": 0,
+  				"headers": {
+  					"Content-Type": "multipart/form-data; boundary=--------------------------185297033549165871591147"
+  				},
+  				"processData": false,
+  				"mimeType": "multipart/form-data",
+  				"contentType": false,
+  				"data": form
+  			};
 
-						// perulangan setiap banyaknya data
-						$.each(data_rw, function(i, hasildata)
-						{
-							jumlah_rw = i+1;
-							jumlah_rt += hasildata.jumlah_rt;
-						});
+  			$.ajax(settings).done(function (data_rw) 
+  			{
+				// perulangan setiap banyaknya data
+				$.each(data_rw, function(i, hasildata)
+				{
+					jumlah_rw = i+1;
+					jumlah_rt += this.jumlah_rt;
+				});
 
-  						// sisipkan html di div dengan id=data_lpmk
-  						$('#data_lpmk').html(`
-  							<div class="col">
-  							<h5>Lembaga Pemberdayaan Masyarakat Kelurahan (LPMK)</h5>
-  							<h6 style="padding-left: 10px">Jumlah :</h6>
-  							<br>
-  							<h5>Jumlah RT : `+ jumlah_rt +`</h6> 
-  							<br>
-  							<h5>Jumlah RW : `+ jumlah_rw +`</h6>
-  							</div>
-  							`);
-  					});
-  				});
-  			</script>
-  		</body>
-  		</html>
+  				// sisipkan html di div dengan id=data_lpmk
+  				$('#data_lpmk').html(`
+  					<div class="col">
+  					<h5>Lembaga Pemberdayaan Masyarakat Kelurahan (LPMK)</h5>
+  					<h6 style="padding-left: 10px">Jumlah :</h6>
+  					<br>
+  					<h5>Jumlah RT : `+ jumlah_rt +`</h6> 
+  					<br>
+  					<h5>Jumlah RW : `+ jumlah_rw +`</h6>
+  					</div>
+  					`);
+  			});
+  		});
+  	</script>
+  </body>
+  </html>
