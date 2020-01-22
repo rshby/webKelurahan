@@ -801,7 +801,7 @@ crossorigin="anonymous"></script>
               </tr>
               <tr>
                 <th scope="row">Pekerjaan Lain</th>
-                <td class="text-right text-center" style="font-weight: bold;">`+ jml_tenaga_medis +`</td>
+                <td class="text-right text-center" style="font-weight: bold;">`+ jml_pekerjaan_lain +`</td>
               </tr>
             </tbody>           
           </table>
