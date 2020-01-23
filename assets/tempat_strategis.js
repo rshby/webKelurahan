@@ -1,48 +1,31 @@
-$(document).ready(function(){
-  var form = new FormData();
-  form.append("type", "string");
+$(document).ready(function()
+{
+     $('#hiburan-list').html('');
+        
+     var settings = 
+     {
+       "url": "https://layananupik.jogjakota.go.id/lumen/public/api/filter-poi-category?type=string",
+       "method": "POST",
+       "timeout": 0,
+     };
 
-  var settings = {
-    "url": "https://layananupik.jogjakota.go.id/lumen/public/api/filter-poi-category",
-    "method": "POST",
-    "timeout": 0,
-    "headers": {
-      "Content-Type": "multipart/form-data; boundary=--------------------------994038657288750660738180"
-    },
-    "processData": false,
-    "mimeType": "multipart/form-data",
-    "contentType": false,
-    "data": form
-  };
+     $.ajax(settings).done(function (response)
+     {
+         let hasil = this.data;
 
-  $.ajax(settings).done(function (response)
-  {
-    if(response.status == "true")
-    {
-      let hasil = response.data;
-
-      $.each(hasil, function(i, data)
-      {
-        $('.isi-tempat').append(`
-          <div class="col-4">
-          Nama Tempat <br>
-          Alamat <br>
-          No Telepon 
-          </div>
-
-          <div class="col-8">
-          : `+ this.title +` <br>   
-          : `+ this.address +` <br>
-          : `+ this.no_telp +` 
-          </div>
-          `); 
-      });
-    }else
-    {
-      $('.isi-tempat').html(`
-        <h3 class="text-center">` + response.msg +`</h3>
-        `);
-    }
-    
-  });
+         $.each(hasil, function(i, n)
+         {
+             $('#hiburan-list').append(`
+             <div class="col-sm-4 mb-3">
+                 <div class="card border-dark rounded">
+                 <div class="card-body">
+                   <h5 class="card-title">`+ this.title +`</h5>
+                   <h6 class="card-subtitle mb-2 text-muted">`+ this.no_telp +`</h6>
+                   <p class="card-text">`+ this.address +`</p>
+                 </div>
+               </div>
+             </div>
+             `);
+         });
+     });     
 });

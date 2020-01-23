@@ -103,12 +103,15 @@
       <br>
       <div class="row isi-tempat">
         <!-- Isi ditampilkan lewat tempat_strategis.js -->
-      </div>
-      <br>
-      <!-- Menampilkan google maps lokasi penting -->
-      <script>
-        function initialize() {
-          var propertiPeta = {
+     </div>
+
+     <br>
+
+     <!-- Menampilkan google maps lokasi penting -->
+    <!-- <script>
+      function initialize()
+      {
+        var propertiPeta = {
             center:new google.maps.LatLng(-7.796764,110.369156), //latitude dan longitude center google maps 
             zoom:14,
             mapTypeId:google.maps.MapTypeId.ROADMAP
@@ -116,18 +119,20 @@
           var peta = new google.maps.Map(document.getElementById("tempatpenting"), propertiPeta);
 
           // membuat Marker
-          var marker=new google.maps.Marker({
+          var marker=new google.maps.Marker(
+          {
+            
             position: new google.maps.LatLng(-7.7930153553774195,110.36601237231787), //latitude dan longitude ambil data dari web service
             map: peta,
             animation: google.maps.Animation.BOUNCE
           });
-          }
+        }
     // event jendela di-load  
-          google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-    <center>
-      <div id="tempatpenting" style="width:580px;height:400px;"></div>
-    </center>
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script> -->
+  <center>
+    <div id="tempatpenting" style="width:580px;height:400px;"></div>
+  </center>
 </div>
 
 <div class="col">
