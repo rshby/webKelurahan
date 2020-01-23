@@ -1,53 +1,76 @@
-$(document).ready(function(){
+$(document).ready(function()
+{
+    tampilData();
 
-    $('#search-button').on('click', function(){
-        searchHiburan();
+    $('#search-button').on('click', function()
+    {
+        hasilCari(); 
     });
 
-    $('#search-input').on('keyup', function(e){
-        if(e.keyCode === 13){
-            searchHiburan();
-        }
-    });
+    function tampilData();
+    {
+     $('#hiburan-list').html('');
+        
+     var settings = 
+     {
+       "url": "https://layananupik.jogjakota.go.id/lumen/public/api/filter-poi-category?type=string",
+       "method": "POST",
+       "timeout": 0,
+     };
 
-    function searchHiburan(){
-        $('#hiburan-list').html('');
-        $.ajax({
-            url: 'https://layananupik.jogjakota.go.id/lumen/public/api/filter-poi-category?type=string',
-            type: 'post',
-            dataType: 'json',
-            data: {
-                's': $('#search-input').val()
-            },
-            success: function(result)
-            {
-                if(result.status == "true")
-                {
-                    let hiburan = result.data;
-                    const data = hiburan.filter(h => h.title === 'Hotel');
-                    console.log(data);
+     $.ajax(settings).done(function (response)
+     {
+         let hasil = this.data;
 
-                    $.each(data, function(i, n)
-                    {
-                        $('#hiburan-list').append(`
-                            <div class="col-sm-3 mb-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">`+ this.title +`</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">`+ this.address +`</h6>
-                                        <h6 class="card-subtitle mb-2 text-muted">`+ this.no_telp +`</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            `);
-                    });
-                    $('#search-input').val('');
-                }else 
-                {
-                    $('#hiburan-list').html('<h2 class="text-center">'+ result.Error +'</h2>');
-                }
-            }
-        })
-    }
+         $.each(hasil, function(i, n)
+         {
+             $('#hiburan-list').append(`
+             <div class="col-sm-4 mb-3">
+                 <div class="card border-dark rounded">
+                 <div class="card-body">
+                   <h5 class="card-title">`+ this.title +`</h5>
+                   <h6 class="card-subtitle mb-2 text-muted">`+ this.no_telp +`</h6>
+                   <p class="card-text">`+ this.address +`</p>
+                 </div>
+               </div>
+             </div>
+             `);
+         });
+     });
+    };
 
-})
+    function hasilCari()
+    {
+     $('#hiburan-list').html('');
+        
+     const keyword = $('#search-input').val();
+        
+     var settings = 
+     {
+       "url": "https://layananupik.jogjakota.go.id/lumen/public/api/filter-poi-category?type=string",
+       "method": "POST",
+       "timeout": 0,
+     };
+
+     $.ajax(settings).done(function (response)
+     {
+         let hasil = this.data;
+         const cari = hasil.filter(c => c.title === keyword);
+
+         $.each(cari, function(i, n)
+         {
+             $('#hiburan-list').append(`
+             <div class="col-sm-4 mb-3">
+                 <div class="card border-dark rounded">
+                 <div class="card-body">
+                   <h5 class="card-title">`+ this.title +`</h5>
+                   <h6 class="card-subtitle mb-2 text-muted">`+ this.no_telp +`</h6>
+                   <p class="card-text">`+ this.address +`</p>
+                 </div>
+               </div>
+             </div>
+             `);
+         });
+     });
+    };    
+});

@@ -114,8 +114,6 @@
       <div class="row" id="hiburan-list">
         <!-- Isi ditampilkan lewat hiburan_sarpras.js -->
       </div>
-
-
     </div>
 
     <div class="col">
